@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(23, 23, 23);
+}
+
+.title-container {
+    display: flex;
+}
+
+.bobble-container {
+    display: flex;
+    margin: 3em;
+}
+
+.box-container,
+.sm-box-container {
+    background-color: snow;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px;
+    z-index: 1;
+}
+
+
+.box {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 700px;
+    min-height: 250px;
+    max-width: 700px;
+    max-height: 250px;
+    z-index: 2;
+    background-color: rgb(23, 23, 23);
+}
+
+.box.two {
+    min-width: 400px;
+    min-height: 250px;
+    max-width: 400px;
+    max-height: 250px;
+}
+
+.inside-box {
+    position: absolute;
+    background-color: rgb(23, 23, 23);
+    transition-duration: 1s;
+    z-index: 0;
+    margin: -2px;
+    width: 50px;
+    height: 50px;
+    scale: 0;
+    animation: removeInsideBox 2s ease-in-out forwards;
+}
+
+@keyframes removeInsideBox {
+    from {
+        scale: 0;
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.sm-box-container {
+    scale: 75%;
+    opacity: 0;
+}
+
+#boxOne {
+    animation: growBox 1s .4s ease-in-out forwards;
+}
+
+#boxTwo {
+    animation: growBox 1s .6s ease-in-out forwards;
+}
+
+#boxThree {
+    animation: growBox 1s .25s ease-in-out forwards;
+}
+
+@keyframes growBox {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
